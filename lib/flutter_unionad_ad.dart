@@ -26,8 +26,8 @@ Future<bool> register({
   bool debug,
   bool supportMultiProcess,
   List<int> directDownloadNetworkType,
-}) async {
-  return await _channel.invokeMethod("register", {
+}) {
+  return _channel.invokeMethod("register", {
     "iosAppId": iosAppId,
     "androidAppId": androidAppId,
     "useTextureView": useTextureView ?? false,
@@ -50,13 +50,13 @@ Future<bool> register({
 }
 
 ///请求权限
-Future<bool> requestPermissionIfNecessary() async {
-  return await _channel.invokeMethod("requestPermissionIfNecessary");
+Future<bool> requestPermissionIfNecessary() {
+  return _channel.invokeMethod("requestPermissionIfNecessary");
 }
 
 ///获取SDK版本号
-Future<String> getSDKVersion() async {
-  return await _channel.invokeMethod("getSDKVersion");
+Future<String> getSDKVersion() {
+  return _channel.invokeMethod("getSDKVersion");
 }
 
 ///banner广告
@@ -131,8 +131,8 @@ Future<bool> interactionAd({
   bool supportDeepLink,
   double expressViewWidth,
   double expressViewHeight,
-}) async {
-  return await _channel.invokeMethod("interactionAd", {
+}) {
+  return _channel.invokeMethod("interactionAd", {
     "mIsExpress": mIsExpress ?? false,
     "androidCodeId": androidCodeId,
     "iosCodeId": iosCodeId,
@@ -181,8 +181,8 @@ Future<bool> loadRewardVideoAd({
   @required String userID,
   int orientation,
   @required String mediaExtra,
-}) async {
-  return await _channel.invokeMethod("loadRewardVideoAd", {
+}) {
+  return _channel.invokeMethod("loadRewardVideoAd", {
     "mIsExpress": mIsExpress == null ? false : mIsExpress,
     "androidCodeId": androidCodeId,
     "iosCodeId": iosCodeId,
@@ -224,8 +224,8 @@ Future<bool> fullScreenVideoAd(
     @required String androidCodeId,
     @required String iosCodeId,
     bool supportDeepLink,
-    int orientation}) async {
-  return await _channel.invokeMethod("fullScreenVideoAd", {
+    int orientation}) {
+  return _channel.invokeMethod("fullScreenVideoAd", {
     "mIsExpress": mIsExpress ?? false,
     "androidCodeId": androidCodeId,
     "iosCodeId": iosCodeId,
